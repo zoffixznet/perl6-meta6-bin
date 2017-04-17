@@ -52,7 +52,7 @@ if $cfg-dir.e & !$cfg-dir.d {
 }
 
 sub first-hit($basename) {
-    @path».child($basename).grep({.e & .r}).first
+    @path».child($basename).grep(*.r).first
 }
 
 my %cfg = read-cfg(first-hit('meta6.cfg'));
